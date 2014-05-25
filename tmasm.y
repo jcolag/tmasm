@@ -24,35 +24,35 @@ stmts   :       stmts stmt                      { ; }
         ;
 
 stmt    :       NUM '/' CHAR ':' NUM '/' CHAR dir opts TERM {
-                                                if ($1 > 127 || $5 > 127)
-                                        yyerror ("No more than 128 states");
-                                                state = $1 % 128 << 1;
-                                                nstate = $5 % 128 << 1;
-                                                flags = $3 % 2 << 1 |
-                                                        $7 % 2 << 2 |
-                                                        $8 << 3     |
-                                                        $9 << 4;
-                                                fprintf (yyout, "%c%c%c",
-                                                        state, nstate,
-                                                        flags | 0x41);
-                                                bytes += 3;
-                                                printf ("%d\t%d\t%d\t\t%d\n",
-                                                        state, nstate,
-                                                        flags, bytes | 0x41);
-                                               }
-        |       TERM                            { printf ("NULL\n") ; }
+                                        if ($1 > 127 || $5 > 127)
+                                            yyerror ("No more than 128 states");
+                                        state = $1 % 128 << 1;
+                                        nstate = $5 % 128 << 1;
+                                        flags = $3 % 2 << 1 |
+                                                $7 % 2 << 2 |
+                                                $8 << 3     |
+                                                $9 << 4;
+                                        fprintf (yyout, "%c%c%c",
+                                                state, nstate,
+                                                flags | 0x41);
+                                        bytes += 3;
+                                        printf ("%d\t%d\t%d\t\t%d\n",
+                                                state, nstate,
+                                                flags, bytes | 0x41);
+                                    }
+        |       TERM                { printf ("NULL\n") ; }
         ;
 
-dir     :       'L'                             { $$ = 0; }
-        |       'l'                             { $$ = 0; }
-        |       'R'                             { $$ = 1; }
-        |       'r'                             { $$ = 1; }
-        |       /* empty?  Assume left */       { $$ = 0; }
+dir     :       'L'                     { $$ = 0; }
+        |       'l'                     { $$ = 0; }
+        |       'R'                     { $$ = 1; }
+        |       'r'                     { $$ = 1; }
+        |       /* empty? Assume Left */{ $$ = 0; }
         ;
 
-opts    :       '.'                             { $$ = 1; }
-        |       'p'                             { $$ = 1; }
-        |       /* empty */                     { $$ = 0; }
+opts    :       '.'                     { $$ = 1; }
+        |       'p'                     { $$ = 1; }
+        |       /* empty */             { $$ = 0; }
         ;
 %%
 
@@ -99,3 +99,4 @@ void yyerror (char *s)
 {
  fprintf (stderr, "\nError on line %d:  %s!\n", lineno, s);
 }
+
