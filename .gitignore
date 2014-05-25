@@ -21,3 +21,11 @@
 *.i*86
 *.x86_64
 *.hex
+
+# Lex and yacc and gedit
+lex.yy.c
+y.tab.c
+y.tab.h
+*~
+tmasm
+
