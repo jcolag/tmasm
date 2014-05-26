@@ -40,6 +40,10 @@ A typical line looks something like:
 
     42/`1 : 13/`0 R p
 
+End-of-line comments also start with a semi-colon (`;`), such as:
+
+    ; This is a terrible comment
+
 Yes, I used lex and yacc to do this, for some reason.
 
 Usage
@@ -50,4 +54,20 @@ The first command-line parameter is the source.  The second is your output binar
 If you don't supply the second parameter, the assembler automatically chooses `a.out` to guarantee conflict with any lazily-compiled C code you might have around.  If you don't supply the first parameter, the assembler reads from `stdin`, which won't confuse you at all.
 
 Run the resulting binary through Black's emulator, and at least in theory, you'll get some kind of result, especially if the commented code (the trace routine) is turned on.
+
+Examples
+--------
+
+There are two maybe-worthwhile example programs:
+
+ - `invert.tm`:  Invert binary data on the tape, printing new zeroes.
+
+ - `fib.tm`:  Generates Fibonacci numbers.
+
+Caveats
+-------
+
+As with a lot of this old code, it may not be ready for prime time.  If there are any bugs, I'll be happy to try to track things down, but it probably won't be a priority.
+
+Hopefully, nobody will use this as a core part of their mission-critical toolchain...
 

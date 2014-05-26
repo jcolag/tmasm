@@ -17,5 +17,5 @@ y.tab.c: tmasm.y
 	$(YACC) tmasm.y
 
 clean:
-	$(RM) lex.yy.c y.tab.c *~
+	$(RM) lex.yy.c y.tab.? *~
 
