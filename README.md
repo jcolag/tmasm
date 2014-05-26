@@ -7,7 +7,9 @@ I don't know why.  Like a few other projects, I don't actually remember writing 
 
 Believe it or not, though, that's not the weirdest part of this.  I didn't write the virtual machine.  That already existed...as [Paul E. Black's 1989 IOCCC entry](http://www.ioccc.org/1989/paul.hint) ([source](http://www.ioccc.org/1989/paul.c), compile and go).
 
-Not included here is what appears to have been a first, tentative step at de-obfuscating the code, which I assume I sensibly gave up on.
+Not included here is what appears to have been a first, tentative step at de-obfuscating the code, which I assume I sensibly gave up on.  I'm also not about to include somebody else's code without permission or a license.
+
+I might be convinced to do so if I rewrite it, but otherwise, you'll need to rely on the original.
 
 Syntax
 ------
