@@ -1,3 +1,7 @@
+; SPDX-FileCopyrightText: 2016 John Colagioia <john@colagioia.net>
+
+; SPDX-License-Identifier: GPL-3.0-or-later
+
 ; Sample Turing Machine Program to generate the Fibonacci Sequence
 
 42/`0 : 57/`0

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2016 John Colagioia <john@colagioia.net>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 NAME=tmasm
 LEX=flex -l
 YACC=byacc -d
